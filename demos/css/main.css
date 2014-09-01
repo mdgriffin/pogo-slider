@@ -1,0 +1,98 @@
+
+*,
+*:before,
+*:after { 
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+body {
+	background: #f9f9fc;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: .1px;
+	line-height: 1.23em;
+	color: #757575;
+}
+
+.container {
+	width: 1000px;
+	margin: 115px auto;
+	border: 1px solid #eaeaea;
+	border-radius: 5px;
+	min-height: 500px;
+	background: #fff;
+	padding: 2em 0;
+}
+
+.sectionHeading {
+	display: block;
+	line-height: 1em;
+	text-align: center;
+	font-weight: 600;
+	color: #212121;
+}
+
+.sectionHeading span {
+	background: #fff;
+	padding: 0 20px;
+	display: inline-block;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.fl {
+	float: left;
+}
+
+.row {
+	width: 100%;
+}
+
+.grid12 {
+	float: left;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+.small12 {
+	width: 100%;
+}
+
+.small3 {
+	width: 25%;
+}
+
+.slideDemos {
+	width: 100%;
+}
+
+.slideDemos-single {
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin-top: 1em;
+}
+
+.slideDemos-single .pogoSlider {
+	height: 225px;
+}
+
+.slideDemos-single h3 {
+	text-align: center;
+	margin-top: 90px;
+	color: #fff;
+	font-weight: 700;
+}
