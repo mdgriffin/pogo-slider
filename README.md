@@ -63,7 +63,7 @@ Callback function called on slide end. Receives the index of the current slide
 
 #### onSliderPause (Function)
 
-Callback function called when the slider has been paused, recieves index of current slide
+Callback function called when the slider has been paused, receives index of current slide
 
 #### onSliderResume (Function)
 
