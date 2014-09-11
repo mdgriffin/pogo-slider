@@ -889,11 +889,11 @@
 
 				var method;
 
-				if (prevSlideIndex > currentSlideIndex && prevSlideIndex === this.slides.length - 1 && currentSlideIndex === 0) {
+				if (currentSlideIndex < prevSlideIndex && (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1)) {
 					method = 'slideLeft';
-				} else if (prevSlideIndex < currentSlideIndex && prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1) {
+				} else if (currentSlideIndex > prevSlideIndex && (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1)) {
 					method = 'slideRight';
-				} else if (prevSlideIndex < currentSlideIndex) {
+				} else if (currentSlideIndex > prevSlideIndex) {
 					method = 'slideLeft';
 				} else {
 					method = 'slideRight';
@@ -907,11 +907,11 @@
 
 				var method;
 
-				if (prevSlideIndex > currentSlideIndex && prevSlideIndex === this.slides.length - 1 && currentSlideIndex === 0) {
+				if (currentSlideIndex < prevSlideIndex && (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1)) {
 					method = 'slideUp';
-				} else if (prevSlideIndex < currentSlideIndex && prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1) {
+				} else if (currentSlideIndex > prevSlideIndex && (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1)) {
 					method = 'slideDown';
-				} else if (prevSlideIndex < currentSlideIndex) {
+				} else if (currentSlideIndex > prevSlideIndex) {
 					method = 'slideUp';
 				} else {
 					method = 'slideDown';
@@ -1287,11 +1287,11 @@
 
 				var method;
 
-				if (prevSlideIndex > currentSlideIndex && prevSlideIndex === this.slides.length - 1 && currentSlideIndex === 0) {
+				if (currentSlideIndex < prevSlideIndex && (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1)) {
 					method = 'foldLeft';
-				} else if (prevSlideIndex < currentSlideIndex && prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1) {
+				} else if (currentSlideIndex > prevSlideIndex && (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1)) {
 					method = 'foldRight';
-				} else if (prevSlideIndex < currentSlideIndex) {
+				} else if (currentSlideIndex > prevSlideIndex) {
 					method = 'foldLeft';
 				} else {
 					method = 'foldRight';
