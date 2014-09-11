@@ -889,9 +889,9 @@
 
 				var method;
 
-				if (currentSlideIndex < prevSlideIndex && (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1)) {
+				if (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1) {
 					method = 'slideLeft';
-				} else if (currentSlideIndex > prevSlideIndex && (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1)) {
+				} else if (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1) {
 					method = 'slideRight';
 				} else if (currentSlideIndex > prevSlideIndex) {
 					method = 'slideLeft';
@@ -907,9 +907,9 @@
 
 				var method;
 
-				if (currentSlideIndex < prevSlideIndex && (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1)) {
+				if (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1) {
 					method = 'slideUp';
-				} else if (currentSlideIndex > prevSlideIndex && (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1)) {
+				} else if (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1) {
 					method = 'slideDown';
 				} else if (currentSlideIndex > prevSlideIndex) {
 					method = 'slideUp';
@@ -1287,9 +1287,9 @@
 
 				var method;
 
-				if (currentSlideIndex < prevSlideIndex && (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1)) {
+				if (currentSlideIndex === 0 && prevSlideIndex === this.slides.length - 1) {
 					method = 'foldLeft';
-				} else if (currentSlideIndex > prevSlideIndex && (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1)) {
+				} else if (prevSlideIndex === 0 && currentSlideIndex === this.slides.length - 1) {
 					method = 'foldRight';
 				} else if (currentSlideIndex > prevSlideIndex) {
 					method = 'foldLeft';
