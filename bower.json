@@ -1,0 +1,29 @@
+{
+  "name": "pogo-slider",
+  "description": "jQuery animated slider plugin",
+  "version": "0.7.0",
+  "homepage": "https://github.com/mdgriffin/pogo-slider",
+  "authors": [
+    "Michael Griffin <mdgriffin@gmail.com>"
+  ],
+  "keywords": [
+    "slider",
+    "animation"
+  ],
+  "main": ["jquery.pogo-slider.min.js","pogo-slider.min.css","LICENSE.txt"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mdgriffin/pogo-slider.git"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "demos"
+  ],
+  "dependencies": {
+    "jquery": ">=1.9.0"
+  },
+}
