@@ -1,18 +1,31 @@
 {
-
 	"name": "pogo-slider",
 	"description": "jQuery animated slider plugin",
 	"version": "0.7.0",
-	"author": {
-		"name": "Michael Griffin",
-		"email": "mike@fluice.com"
+	"keywords": [
+		"jquery-plugin",
+		"slider",
+		"client"
+	],
+	"author": "Michael Griffin <mike@fluice.com>",
+	"homepage": "https://github.com/mdgriffin/pogo-slider",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/mdgriffin/pogo-slider.git"
 	},
-
+	"license": "MIT",
+	"files": [
+		"jquery.pogo-slider.min.js",
+		"pogo-slider.min.css",
+		"LICENSE.txt"
+	],
+	"dependencies": {
+		"jquery": ">=1.9.0"
+	},
 	"devDependencies": {
 		"grunt-contrib-uglify": "*",
 		"grunt-contrib-cssmin": "*",
 		"grunt-autoprefixer": "*",
 		"grunt-contrib-copy": "*"
 	}
-
 }
