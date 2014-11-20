@@ -3,6 +3,7 @@
 	"description": "jQuery animated slider plugin",
 	"version": "0.7.0",
 	"keywords": [
+		"jquery",
 		"jquery-plugin",
 		"slider",
 		"client"
