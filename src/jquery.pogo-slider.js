@@ -337,14 +337,18 @@
 					var cssRules = styleSheets[sheet].rules || styleSheets[sheet].cssRules;
 					for (var r in cssRules) {
 						if (el.matches(cssRules[r].selectorText)) {
-							var styles = stylesReg.exec(cssRules[r].cssText.replace(/ /g,''))[1].split(';');
-							for (var j = 0;j < styles.length;j++) {
-								var prop = styles[j].split(':')[0];
-								// if this prop is not empty and has a value and is not already in the props array
-								if (prop && props.indexOf(prop) === -1) {
-									props.push(prop); 
+							var matchedStyles = stylesReg.exec(cssRules[r].cssText.replace(/ /g,''));
+							if (matchedStyles) {
+								var styles = matchedStyles[1].split(';');
+								for (var j = 0;j < styles.length;j++) {
+									var prop = styles[j].split(':')[0];
+									// if this prop is not empty and has a value and is not already in the props array
+									if (prop && props.indexOf(prop) === -1) {
+										props.push(prop); 
+									}
 								}
 							}
+							
 						}
 					}
 				}
