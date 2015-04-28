@@ -2,7 +2,7 @@
  * 
  * jQuery Pogo Slider v0.7
  * 
- * Copyright 2014, Michael Griffin (mike@fluice.com)
+ * Copyright 2015, Michael Griffin (mike@fluice.com)
  * 
  **/
 
