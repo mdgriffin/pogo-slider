@@ -633,6 +633,8 @@
 		// private method called on slide start
 		_onSlideStart: function (slideIndex) {
 
+			this.slides[slideIndex].$element.css('z-index', 1);
+
 			if (this.settings.autoplay) {
 				// need to set them regardless of whether it is paused or not
 				this.slideStartTime = new Date();
