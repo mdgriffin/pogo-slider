@@ -1265,7 +1265,13 @@
 				var self = this;
 				var currentSlide = self.slides[currentSlideIndex];
 
-				var numRows = Math.round(self.$element.height() / 100); // 100 is the target square size
+				var height = 0;
+				if(self.settings.preserveTargetSize) {
+					height = self.$element.css('padding-bottom');
+				} else {
+					height = self.$element.height();
+				}
+				var numRows = Math.round(height / 100); // 100 is the target square size
 				var numCols = Math.round(self.$element.width() / 100);
 
 				// init current slide and prev slides position
