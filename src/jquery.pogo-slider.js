@@ -813,21 +813,27 @@
 				return style.replace(/(?:background)[^;]+;/g, '');
 			});
 
-			for (var j = 1; j < numSlices; j++) {
+			for (var j = 0; j < numSlices; j++) {
 
 				var colNum = j % rows;
 				var rowNum = Math.floor(j / rows);
 
 				var slicePosStyles = 'width:' + sliceWidth + '%;height:' + sliceHeight + '%;top:' + (sliceHeight * colNum )+ '%;left:' + (sliceWidth * rowNum) + '%;';
 				var sliceInnerPosStyles = 'width:' + sliceInnerWidth + '%;height:' + sliceInnerHeight + '%;top:-' + (100 * colNum) + '%;left:-' + (100 * rowNum) + '%;';
-
-				$el.find('.pogoSlider-slide-slice')
-					.last()
-					.clone(true,true)
-					.appendTo(this.slides[slideIndex].element)
-					.attr('style',slicePosStyles)
+				var sliceInnerBackgroundStyles = '';
+				if(this.settings.preserveTargetSize) {
+					sliceInnerBackgroundStyles = 'background-size:' + this.$element.width() + 'px ' + parseFloat(this.$element.css('padding-bottom')) + 'px;';
+				}
+				
+				var el = $el.find('.pogoSlider-slide-slice')
+					.last();
+				if(j != 0) {
+					el = el.clone(true,true)
+					.appendTo(this.slides[slideIndex].element);
+				}
+					el.attr('style',slicePosStyles)
 					.find('.pogoSlider-slide-slice-inner')
-					.attr('style',styleAttr + sliceInnerPosStyles);
+					.attr('style',styleAttr + sliceInnerPosStyles + sliceInnerBackgroundStyles);
 
 			}
 
@@ -1265,7 +1271,13 @@
 				var self = this;
 				var currentSlide = self.slides[currentSlideIndex];
 
-				var numRows = Math.round(self.$element.height() / 100); // 100 is the target square size
+				var height = 0;
+				if(self.settings.preserveTargetSize) {
+					height = parseFloat(self.$element.css('padding-bottom'));
+				} else {
+					height = self.$element.height();
+				}
+				var numRows = Math.round(height / 100); // 100 is the target square size
 				var numCols = Math.round(self.$element.width() / 100);
 
 				// init current slide and prev slides position
