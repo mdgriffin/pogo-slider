@@ -813,13 +813,18 @@
 				return style.replace(/(?:background)[^;]+;/g, '');
 			});
 
-			for (var j = 1; j < numSlices; j++) {
+			for (var j = 0; j < numSlices; j++) {
 
 				var colNum = j % rows;
 				var rowNum = Math.floor(j / rows);
 
 				var slicePosStyles = 'width:' + sliceWidth + '%;height:' + sliceHeight + '%;top:' + (sliceHeight * colNum )+ '%;left:' + (sliceWidth * rowNum) + '%;';
 				var sliceInnerPosStyles = 'width:' + sliceInnerWidth + '%;height:' + sliceInnerHeight + '%;top:-' + (100 * colNum) + '%;left:-' + (100 * rowNum) + '%;';
+				var sliceInnerBackgroundStyles = '';
+				if(this.settings.preserveTargetSize) {
+					sliceInnerBackgroundStyles = 'background-size:' + this.$element.width() + 'px ' + parseFloat(this.$element.css('padding-bottom')) + 'px;';
+					console.log(sliceInnerBackgroundStyles)
+				}
 
 				$el.find('.pogoSlider-slide-slice')
 					.last()
@@ -827,7 +832,7 @@
 					.appendTo(this.slides[slideIndex].element)
 					.attr('style',slicePosStyles)
 					.find('.pogoSlider-slide-slice-inner')
-					.attr('style',styleAttr + sliceInnerPosStyles);
+					.attr('style',styleAttr + sliceInnerPosStyles + sliceInnerBackgroundStyles);
 
 			}
 
@@ -1267,7 +1272,7 @@
 
 				var height = 0;
 				if(self.settings.preserveTargetSize) {
-					height = self.$element.css('padding-bottom');
+					height = parseFloat(self.$element.css('padding-bottom'));
 				} else {
 					height = self.$element.height();
 				}
