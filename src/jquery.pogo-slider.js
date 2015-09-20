@@ -823,14 +823,15 @@
 				var sliceInnerBackgroundStyles = '';
 				if(this.settings.preserveTargetSize) {
 					sliceInnerBackgroundStyles = 'background-size:' + this.$element.width() + 'px ' + parseFloat(this.$element.css('padding-bottom')) + 'px;';
-					console.log(sliceInnerBackgroundStyles)
 				}
-
-				$el.find('.pogoSlider-slide-slice')
-					.last()
-					.clone(true,true)
-					.appendTo(this.slides[slideIndex].element)
-					.attr('style',slicePosStyles)
+				
+				var el = $el.find('.pogoSlider-slide-slice')
+					.last();
+				if(j != 0) {
+					el = el.clone(true,true)
+					.appendTo(this.slides[slideIndex].element);
+				}
+					el.attr('style',slicePosStyles)
 					.find('.pogoSlider-slide-slice-inner')
 					.attr('style',styleAttr + sliceInnerPosStyles + sliceInnerBackgroundStyles);
 
