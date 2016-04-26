@@ -6,6 +6,11 @@ See http://fluice.com/pogo-slider for demos and further info
 
 Pogo Slider is a jQuery plugin that allows you to create animated image/content sliders. CSS animations are used to transition between slides. A CSS animation can be triggered on element within a slide, after the slide transitions in, and as the slide transitions out.
 
+## About this fork
+这里主要修复了一个在preserveTargetSize选项为True的情况下，blocksReveal无法正常工作的问题。
+后续可能进行一些其他的改进。
+(pogo-slider.min.js压缩的时候随便找了个压缩工具，所以和原版的不太相似)
+
 ## Usage
 
 ### markup
