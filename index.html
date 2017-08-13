@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<!--[if IE 6]>     <html class="ie ie6" lang="en">  <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" lang="en" ><![endif]-->
+<!--[if gt IE 9]>  <html class="ie" lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Pogo Slider Creator Opencart module</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="js/libs/pogo-slider/pogo-slider.min.css">
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<header class="clearfix">
+
+			<div class="grid12 small12 clearfix">
+			
+				<h2 class="fl">Pogo Slider</h2>
+
+				<nav class="fr">
+					<ul class="list--hNav list--reset clearfix">
+						<li><a href="#demos">Demos</a></li>
+						<li><a href="#usage">usage</a></li>
+						<li><a href="#download">Download</a></li>
+					</ul>
+				</nav>
+
+			</div>
+
+		</header>
+
+		<div class="clearfix">
+			
+			<div class="grid12 small12">
+				
+				<div class="banner">
+					
+					<div class="pogoSlider pogoSlider--dirCenterHorizontal pogoSlider--navBottom" id="example-full-width">
+					
+						<div class="pogoSlider-slide" style="background-image: url(img/slide1.jpg);" data-transition="slide"></div>
+						<div class="pogoSlider-slide" style="background-image: url(img/slide2.jpg);" data-transition="expandReveal"></div>
+						<div class="pogoSlider-slide" style="background-image: url(img/slide3.jpg);" data-transition="fade"></div>
+
+				</div>
+
+			</div>
+
+			<div class="info grid12 small12">
+				
+				<h2 class="sectionHeading"><span>About</span></h2>
+
+				<p>
+					Pogo Slider is a jQuery plugin that allows you to create animated image/content sliders. CSS animations are used to transition between slides. A CSS animation can be triggered on element within a slide, after the slide transitions in, and as the slide transitions out.
+				</p>
+			
+			</div>
+
+			<div class="demos fl" id="demos">
+				
+				<div class="slideDemos clearfix">
+
+					<div class="grid12 small12">
+						
+						<h3 class="sectionHeading"><span>Slide Transition Demos</span></h3>
+
+					</div>
+
+					<div class="row fl">
+
+						<div class="grid12 small3 slideDemos-single">
+					
+							<div class="pogoSlider" id="demo1">
+								
+								<div class="pogoSlider-slide" style="background-color: indigo;">
+									<h3 class="pogoSlider-slide-element">slide</h3>
+								</div>
+								<div class="pogoSlider-slide" style="background-color: dimgray;">
+									<h3 class="pogoSlider-slide-element">slide</h3>
+								</div>
+								<div class="pogoSlider-slide" style="background-color: coral">
+									<h3 class="pogoSlider-slide-element">slide</h3>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="grid12 small3 slideDemos-single">
+							
+							<div class="pogoSlider " id="demo2">
+								
+								<div class="pogoSlider-slide" data-transition="blocksReveal" style="background-color: magenta;">
+									<h3 class="pogoSlider-slide-element">blocksReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="blocksReveal" style="background-color: teal;">
+									<h3 class="pogoSlider-slide-element">blocksReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="blocksReveal" style="background-color: plum">
+									<h3 class="pogoSlider-slide-element">blocksReveal</h3>
+								</div>
+
+							</div>
+							
+						</div>
+
+						<div class="grid12 small3 slideDemos-single">
+					
+							<div class="pogoSlider" id="demo3">
+								
+								<div class="pogoSlider-slide" data-transition="verticalSplitReveal" style="background-color: sandybrown;">
+									<h3 class="pogoSlider-slide-element">verticalSplitReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="verticalSplitReveal" style="background-color: forestgreen;">
+									<h3 class="pogoSlider-slide-element">verticalSplitReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="verticalSplitReveal" style="background-color: midnightblue">
+									<h3 class="pogoSlider-slide-element">verticalSplitReveal</h3>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="grid12 small3 slideDemos-single">
+					
+							<div class="pogoSlider" id="demo4">
+								
+								<div class="pogoSlider-slide" data-transition="zipReveal" style="background-color: darkturquoise;">
+									<h3 class="pogoSlider-slide-element">zipReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="zipReveal" style="background-color: lightgrey;">
+									<h3 class="pogoSlider-slide-element">zipReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="zipReveal" style="background-color: darkred">
+									<h3 class="pogoSlider-slide-element">zipReveal</h3>
+								</div>
+
+							</div>
+							
+						</div>
+
+					</div><!-- .row -->
+
+					<div class="row fl">
+
+						<div class="grid12 small3 slideDemos-single">
+							
+							<div class="pogoSlider" id="demo5">
+								
+								<div class="pogoSlider-slide" data-transition="shrinkReveal" style="background-color: rosybrown;">
+									<h3 class="pogoSlider-slide-element">shrinkReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="shrinkReveal" style="background-color: orchid;">
+									<h3 class="pogoSlider-slide-element">shrinkReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="shrinkReveal" style="background-color: royalblue">
+									<h3 class="pogoSlider-slide-element">shrinkReveal</h3>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="grid12 small3 slideDemos-single" id="demo2">
+							
+							<div class="pogoSlider" id="demo6">
+								
+								<div class="pogoSlider-slide" data-transition="expandReveal" style="background-color: limegreen;">
+									<h3 class="pogoSlider-slide-element">expandReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="expandReveal" style="background-color: lightsteelblue;">
+									<h3 class="pogoSlider-slide-element">expandReveal</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="expandReveal" style="background-color: aquamarine">
+									<h3 class="pogoSlider-slide-element">expandReveal</h3>
+								</div>
+
+							</div>
+							
+						</div>
+
+						<div class="grid12 small3 slideDemos-single">
+					
+							<div class="pogoSlider" id="demo7">
+								
+								<div class="pogoSlider-slide" data-transition="fold" style="background-color: darkolivegreen;">
+									<h3 class="pogoSlider-slide-element">fold</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="fold" style="background-color: orange;">
+									<h3 class="pogoSlider-slide-element">fold</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="fold" style="background-color: palevioletred">
+									<h3 class="pogoSlider-slide-element">fold</h3>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="grid12 small3 slideDemos-single">
+							
+							<div class="pogoSlider" id="demo8">
+								
+								<div class="pogoSlider-slide" data-transition="verticalSlide" style="background-color: darkslateblue;">
+									<h3 class="pogoSlider-slide-element">verticalSlide</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="verticalSlide" style="background-color: cyan;">
+									<h3 class="pogoSlider-slide-element">verticalSlide</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="verticalSlide" style="background-color: indianred">
+									<h3 class="pogoSlider-slide-element">verticalSlide</h3>
+								</div>
+
+							</div>
+							
+						</div>
+
+					</div><!-- .row -->
+
+					<div class="row fl">
+
+						<div class="grid12 small3 slideDemos-single">
+							
+							<div class="pogoSlider" id="demo9">
+								
+								<div class="pogoSlider-slide" data-transition="fade" style="background-color: skyblue;">
+									<h3 class="pogoSlider-slide-element">fade</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="fade" style="background-color: black;">
+									<h3 class="pogoSlider-slide-element">fade</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="fade" style="background-color: gainsboro">
+									<h3 class="pogoSlider-slide-element">fade</h3>
+								</div>
+
+							</div>
+							
+						</div>
+
+						<div class="grid12 small3 slideDemos-single">
+				
+							<div class="pogoSlider" id="demo10">
+								
+								<div class="pogoSlider-slide" data-transition="slideRevealLeft" style="background-color: LightPink;">
+									<h3 class="pogoSlider-slide-element">Slide Reveal Left</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="slideRevealLeft" style="background-color: SlateBlue;">
+									<h3 class="pogoSlider-slide-element">Slide Reveal Left</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="slideRevealLeft" style="background-color: DimGrey">
+									<h3 class="pogoSlider-slide-element">Slide Reveal Left</h3>
+								</div>
+
+							</div>
+							
+						</div>
+
+						<div class="grid12 small3 slideDemos-single">
+							
+							<div class="pogoSlider" id="demo11">
+								
+								<div class="pogoSlider-slide" data-transition="slideOverLeft" style="background-color: HotPink;">
+									<h3 class="pogoSlider-slide-element">Slide Over Left</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="slideOverLeft" style="background-color: Brown;">
+									<h3 class="pogoSlider-slide-element">Slide Over Left</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="slideOverLeft" style="background-color: Indigo">
+									<h3 class="pogoSlider-slide-element">Slide Over Left</h3>
+								</div>
+
+							</div>
+							
+						</div>
+
+						<div class="grid12 small3 slideDemos-single">
+							
+							<div class="pogoSlider" id="demo12">
+								
+								<div class="pogoSlider-slide" data-transition="barRevealDown" style="background-color: PaleGreen;">
+									<h3 class="pogoSlider-slide-element">Bars Reveal Down</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="barRevealDown" style="background-color: MediumVioletRed;">
+									<h3 class="pogoSlider-slide-element">Bars Reveal Down</h3>
+								</div>
+								<div class="pogoSlider-slide" data-transition="barRevealDown" style="background-color: SpringGreen">
+									<h3 class="pogoSlider-slide-element">Bars Reveal Down</h3>
+								</div>
+
+							</div>
+							
+						</div>
+
+					</div><!-- row -->
+
+				</div><!-- slideDemos -->
+
+
+				<div class="elementDemos clearfix">
+
+					<div class="grid12 small12">
+						
+						<h3 class="sectionHeading"><span>Element Transition Demos</span></h3>
+
+						<p>Click to transition</p>
+
+					</div>
+
+					<div class="row fl">
+						
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="slideDown" style="background: mediumspringgreen;">
+								<h4>slideDown</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="slideUp" style="background: orchid;">
+								<h4>slideUp</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="slideRight" style="background: gold;">
+								<h4>slideRight</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="slideLeft" style="background: dodgerblue;">
+								<h4>slideLeft</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="expand" style="background: darkred;">
+								<h4>expand</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="contract" style="background: darkmagenta;">
+								<h4>contract</h4>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row fl">
+						
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="spin" style="background: Teal;">
+								<h4>spin</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="sideFall" style="background: sienna;">
+								<h4>sideFall</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="horizontal3DFlip" style="background: yellowgreen;">
+								<h4>horizontal3DFlip</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="vertical3DFlip" style="background: mediumaquamarine;">
+								<h4>vertical3DFlip</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="3DPivot" style="background: khaki;">
+								<h4>3DPivot</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="rollLeft" style="background: powderblue;">
+								<h4>rollLeft</h4>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row fl">
+						
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="rollRight" style="background: palegreen;">
+								<h4>rollRight</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="glideLeft" style="background: tomato;">
+								<h4>glideLeft</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="glideRight" style="background: cyan;">
+								<h4>glideRight</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="flipX" style="background: peru;">
+								<h4>flipX</h4>
+							</div>
+						</div>
+
+						<div class="grid12 small2">
+							<div class="elementDemos-single" data-transition="flipY" style="background: cadetblue;">
+								<h4>flipY</h4>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div><!-- demos -->
+
+			<div class="usage grid12 small12" id="usage">
+
+				<h2 class="sectionHeading"><span>Usage</span></h2>
+
+				<p>
+					Pogo slider does not generate any navigation buttons. It provides a simple api to control the slider and you can use this api when creating your own buttons. It does however provide some default button styling classes.
+				</p>
+
+				<h3 class="sectionHeading"><span>Example Markup</span></h3>
+
+				<h4>HTML</h4>
+
+				<pre class=" language-markup"><code>&lt;div class="pogoSlider"&gt;
+
+				    &lt;div class="pogoSlider-slide" data-transition="slideOverLeft" data-duration="1000"  style="background-image:url(img/slide1.jpg);"&gt;
+				        &lt;h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="slideUp" data-duration="750" data-delay="500"&gt;
+				            Your Content Here!
+				        &lt;/h2&gt;
+				    &lt;/div&gt;
+				    &lt;div class="pogoSlider-slide " data-transition="fold" data-duration="1000"  style="background-image:url(img/slide2.jpg);"&gt;&lt;/div&gt;
+
+				&lt;/div&gt;&lt;!-- .pogoSlider --&gt;</code></pre>
+
+				<h4>Javascript</h4>
+
+				<pre class="language-javascript"><code>$(document).ready(function () {
+
+				    var mySlider = $('.my-slider').pogoSlider().data('plugin_pogoSlider');
+
+				    mySlider.pause(); // Pauses the slider on the current slide, only works if autoplay option set to true
+
+				    mySlider.resume(); // Resumes the slider back to normal operation
+
+				    mySlider.nextSlide(); // Transition to the next slide
+
+				    mySlider.prevSlide(); // Transition to the previous slide
+
+				    mySlider.toSlide(2); // Transitions to the slide index passes to the method
+
+				    mySlider.destroy(); // Destroys the plugin, restoring elements to their default state
+
+				});</code></pre>
+				
+				<h3 class="sectionHeading"><span>Options</span></h3>
+
+				<table class="table">
+					<thead>
+						<th>Option</th>
+						<th>Type</th>
+						<th>Default</th>
+						<th>Explanation</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>autoplayTimeout</td>
+							<td>Number</td>
+							<td>4000</td>
+							<td>The amount of time between a slide transitioning in ends and slide transition out starts. Only applied when autoplay is set to true</td>
+						</tr>
+						<tr>
+							<td>autoplay</td>
+							<td>Boolean</td>
+							<td>true</td>
+							<td>When set to true, slides transition between one another automatically</td>
+						</tr>
+						<tr>
+							<td>displayProgess</td>
+							<td>Boolean</td>
+							<td>true</td>
+							<td>Creates a progress bar that displays the amount of time left until the current slide transitions out. Only applied when autoplay is set to true</td>
+						</tr>
+						<tr>
+							<td>baseZindex</td>
+							<td>Number</td>
+							<td>1</td>
+							<td>Used when settings the z-index of slides. Raise the number if you need the slider to overlap another element</td>
+						</tr>
+						<tr>
+							<td>onSlideStart</td>
+							<td>function</td>
+							<td>null</td>
+							<td>Callback function that runs on slide start. Receives the index of the current slide.</td>
+						</tr>
+						<tr>
+							<td>onSlideEnd</td>
+							<td>function</td>
+							<td>null</td>
+							<td>Callback called on slide end. Receives the index of the current slide.</td>
+						</tr>
+						<tr>
+							<td>onSliderPause</td>
+							<td>function</td>
+							<td>null</td>
+							<td>Callback function called when the slider has been paused, receives index of current slide</td>
+						</tr>
+						<tr>
+							<td>onSliderResume</td>
+							<td>function</td>
+							<td>null</td>
+							<td>Callback function called when the slider has resumed after being paused. Received the index of the current slide
+</td>
+						</tr>
+						<tr>
+							<td>slideTransition</td>
+							<td>string</td>
+							<td>'slide'</td>
+							<td>Sets the default slide transitions. Only used if the data-transition property has not been set on the slides element</td>
+						</tr>
+						<tr>
+							<td>slideTransitionDuration</td>
+							<td>number</td>
+							<td>1000</td>
+							<td>The default slide transitoins duration. Only used if the data-duration property has not been set on the slides element</td>
+						</tr>
+						<tr>
+							<td>elementTransitionStart</td>
+							<td>number</td>
+							<td>500</td>
+							<td>The default element transition start time. Only used if the data-start property has not been set on an element</td>
+						</tr>
+						<tr>
+							<td>elementTransitionDuration</td>
+							<td>number</td>
+							<td>1000</td>
+							<td>The default element transition duration. Only used if the data-duration property has not been set on an element</td>
+						</tr>
+						<tr>
+							<td>elementTransitionIn</td>
+							<td>string</td>
+							<td>'slideUp'</td>
+							<td>The default element transition in animation. Only used if the data-in property has not been set on an element</td>
+						</tr>
+						<tr>
+							<td>elementTransitionOut</td>
+							<td>string</td>
+							<td>'slideDown'</td>
+							<td>The default element transition in animation. Only used if the data-out property has not been set on an element</td>
+						</tr>
+						<tr>
+							<td>generateButtons</td>
+							<td>Boolean</td>
+							<td>true</td>
+							<td>Generates next and previous buttons and sets the click event handlers</td>
+						</tr>
+						<tr>
+							<td>buttonPosition</td>
+							<td>String</td>
+							<td>'CenterHorizontal'</td>
+							<td>
+								Where the buttons should be positionsed. Possible values:
+
+								<ul>
+									<li>TopLeft</li>
+									<li>TopRight</li>
+									<li>BottomLeft</li>
+									<li>BottomRight</li>
+									<li>CenterHorizontal</li>
+									<li>CenterVertical</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>generateNav</td>
+							<td>Boolean</td>
+							<td>true</td>
+							<td>Generates a clickable nav item for each slide</td>
+						</tr>
+						<tr>
+							<td>navPosition</td>
+							<td>String</td>
+							<td>'Bottom'</td>
+							<td>
+								Where the nav will be positioned. Possible values:
+
+								<ul>
+									<li>Top</li>
+									<li>Bottom</li>
+									<li>Left</li>
+									<li>Right</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td>preserveTargetSize</td>
+							<td>Boolean</td>
+							<td>false</td>
+							<td>Sets if the slider and all the elements should be scaled relative to the target size. Preserves the aspect ratio and allows you to style the slider
+and all the elements at a target size and have the that styling be preserved even when scaling to smaller devices.</td>
+						</tr>
+						<tr>
+							<td>responsive</td>
+							<td>Boolean</td>
+							<td>false</td>
+							<td>If set to true, sets window resize handler to call the preserveTargetSize method if the slider is resized</td>
+						</tr>
+						<tr>
+							<td>targetWidth</td>
+							<td>Integer</td>
+							<td>1000</td>
+							<td>Used with the preserveTargetSize method to allow your slider to appear consistently across different screen sizes</td>
+						</tr>
+						<tr>
+							<td>targetHeight</td>
+							<td>Integer</td>
+							<td>300</td>
+							<td>Used with the preserveTargetSize method to allow your slider to appear consistently across different screen sizes</td>
+						</tr>
+						<tr>
+							<td>pauseOnHover</td>
+							<td>Boolean</td>
+							<td>true</td>
+							<td>Sets events handlers to pause and resume the slider on mouseover</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+			<div class="download grid12 small12" id="download">
+
+				<a href="https://github.com/mdgriffin/pogo-slider/archive/master.zip" class="btn btn--large btn--fullWidth">Download Github Repository</a>
+
+			</div>
+
+		</div><!-- clearfix -->
+
+	</div>
+
+	<script type="text/javascript" src="js/libs/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/libs/pogo-slider/jquery.pogo-slider.min.js"></script>
+	<script type="text/javascript" src="js/libs/prism.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>

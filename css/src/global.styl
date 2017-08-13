@@ -1,0 +1,174 @@
+@import "nib"
+
+@import "libs/normalize"
+
+@import "libs/girder/layout"
+
+@import "libs/girder/color"
+
+@import "libs/girder/grid"
+
+@import "libs/girder/elements/list"
+
+@import "libs/girder/elements/button"
+
+@import "libs/girder/elements/table"
+
+@import "libs/girder/typography"
+
+@import "libs/prism"
+
+$color_primary = #5dc74b
+$color_secondary = #506a85
+
+
+body
+	font-family: 'Open Sans', sans-serif
+	background: #f9f9fc
+	-webkit-font-smoothing: antialiased
+	letter-spacing: .1px
+	color: blk(54%)
+
+h1,h2,h3
+	font-weight: 500
+	-webkit-font-smoothing: antialiased
+
+.sectionHeading
+	display: block
+	text-align: center
+	background: linear-gradient(to bottom, #ffffff 46%,#eaeaea 47%,#eaeaea 50%,#eaeaea 53%,#ffffff 54%)
+	font-weight: 600
+	color: blk(87%)
+
+	span
+		background: #fff
+		padding: 0 20px
+		display: inline-block
+
+// I can override the grid default settings
+/*
+$grid_cols = 12
+$grid_gutter = 1em
+$grid_inset = true
+*/
+
+generateGrid()
+
+.container
+	width: 1000px
+	margin: 115px auto
+	border: 1px solid #eaeaea
+	border-radius: 5px
+	min-height: 500px
+	background: #fff
+
+header
+	border-bottom: 1px solid #eaeaea
+
+
+	h2
+		font-family: 'Pacifico'
+		color: $color_primary
+		margin: 1em 0
+
+nav
+	margin-top: 2em
+	
+	li
+		margin-right: 1em
+
+		&:last-child
+			margin-right: 0
+
+	a
+		background: #eaeaea
+		border-radius: 5px
+		padding: 12px 28px
+		display: inline-block
+		color: #b0b0b0
+		text-decoration: none
+
+		&:hover
+			background: darken(#eaeaea,3)
+			color: darken(#b0b0b0,3)
+
+
+.banner
+	background: grey
+	margin-top: 1em
+
+	.pogoSlider
+		height: 300px
+
+.info
+	text-align: center
+
+.demos
+	width: 100%
+
+.slideDemos
+	width: 100%
+
+	&-single
+		border-radius: 3px
+		margin-top: 1em
+
+		.pogoSlider
+			height: 225px
+
+		h3
+			text-align: center
+			margin-top: 90px
+			color: #fff
+			font-weight: 700
+
+.elementDemos
+	perspective: 1300px
+
+	&-single
+		background: grey
+		margin-top: 1em
+		cursor: pointer
+		padding: 70px 0
+
+		h4
+			color: #fff
+			margin: 0
+			text-align: center
+
+.usage
+
+	p
+		text-align: center
+
+	table
+		thead,tr
+			text-align: left
+
+		td,th
+			padding: 10px 20px
+
+			&:first-child
+				padding-left: 0
+
+		th
+			border-bottom: 2px solid #cccccc
+			color: blk(95)
+
+
+		td:first-child
+			font-weight: bold
+
+		tbody tr
+			border-bottom: 1px solid #eaeaea
+
+.download
+	margin-top: 2em
+	margin-bottom: 2em
+
+	a
+		background: #cccccc
+		color: blk(87%)
+
+		&:hover
+			background: darken(#cccccc,3)

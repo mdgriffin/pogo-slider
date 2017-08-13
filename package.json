@@ -1,0 +1,15 @@
+{
+
+	"name": "pogo-slider-site",
+	"description": "Pogo Slider jQuery plugin demo site",
+	"version": "1.0.0",
+	"author": {
+		"name": "Michael Griffin",
+		"email": "mdgriffin064@gmail.com"
+	},
+
+	"devDependencies": {
+		"grunt-contrib-stylus": "*"
+	}
+
+}
