@@ -1,9 +1,9 @@
 /**
- * 
+ *
  * jQuery Pogo Slider v0.7
- * 
+ *
  * Copyright 2015, Michael Griffin (mike@fluice.com)
- * 
+ *
  **/
 
 (function ( $, window, document, undefined ) {
@@ -29,7 +29,7 @@
 		var prefixedStyles = {};
 
 		if (arguments.length === 1) {
-		
+
 			for (style in styles) {
 				if (styles.hasOwnProperty(style)) {
 					appendPrefixedStyles(prefixedStyles,style,styles[style]);
@@ -52,9 +52,9 @@
 (function ( $, window, document, undefined ) {
 
 	'use strict';
-	
+
 	var supportsCSSProp = function (featurename) {
-		
+
 		var feature = false;
 		var domPrefixes = 'Webkit Moz ms O'.split(' ');
 		var elm = document.createElement('div');
@@ -67,22 +67,22 @@
 		}
 
 		if(feature === false) {
-			
+
 			featurenameCapital = featurename.charAt(0).toUpperCase() + featurename.substr(1);
-			
+
 			for(var i = 0; i < domPrefixes.length; i++) {
-				
+
 				if(elm.style[domPrefixes[i] + featurenameCapital ] !== undefined) {
 					feature = true;
 					break;
 				}
-			
+
 			}
-		
+
 		}
-		
+
 		return feature;
-	
+
 	};
 
 	var supports = {};
@@ -132,7 +132,7 @@
 		this.navigating = false;
 		this.slideStartTime = null;
 		this.slideTimeRemaining = 0;
-		
+
 		this._init();
 
 	}
@@ -158,7 +158,7 @@
 
 					var startTime = parseInt($(this).data('start')) !== undefined? $(this).data('start') : self.settings.elementTransitionStart;
 					var duration = parseInt($(this).data('duration')) || self.settings.elementTransitionDuration;
-					
+
 					if ((startTime + duration) > elementTransitionDuration) {
 						elementTransitionDuration = (startTime + duration);
 					}
@@ -173,7 +173,7 @@
 					});
 
 					$(this).css('opacity',0);
-				
+
 				});
 
 				var slide = {
@@ -191,10 +191,10 @@
 			});
 
 			self.numSlides = self.slides.length;
-			
+
 			// initialize the first slide
 			self.slides[0].$element.css('opacity',1);
-			
+
 			// if autoplay set the corrext startTime and time remaining properties
 			if (self.settings.autoplay && self.settings.displayProgess) {
 					self._createProgessBar();
@@ -215,13 +215,13 @@
 
 				// when all images have loaded
 				self.$element.find('img').one('load',function () {
-					
+
 					if (++imagesLoaded === numImages) {
-						
+
 						$('.pogoSlider-loading').remove();
-						
+
 						self._onSliderReady();
-					
+
 					}
 
 				}).each(function(){
@@ -231,9 +231,9 @@
 				});
 
 			} else {
-				
+
 				self._onSliderReady();
-			
+
 			}
 
 		},
@@ -259,7 +259,7 @@
 
 			if (self.settings.preserveTargetSize) {
 				self._preserveTargetSize();
-			
+
 				if (self.settings.responsive) {
 					$(window).on('resize', function () {
 						self._preserveTargetSize();
@@ -279,6 +279,9 @@
 				});
 
 			}
+
+			var first_slide =self.slides[0].$element[0];
+			first_slide.classList.add('active_slide');
 
 			self._onSlideStart(0);
 
@@ -344,11 +347,11 @@
 									var prop = styles[j].split(':')[0];
 									// if this prop is not empty and has a value and is not already in the props array
 									if (prop && props.indexOf(prop) === -1) {
-										props.push(prop); 
+										props.push(prop);
 									}
 								}
 							}
-							
+
 						}
 					}
 				}
@@ -417,7 +420,7 @@
 		_createProgessBar: function () {
 
 			var progressHtml = '';
-			
+
 			progressHtml += '<div class="pogoSlider-progressBar">';
 			progressHtml +=	'<div class="pogoSlider-progressBar-duration"></div>';
 			progressHtml += '</div>';
@@ -429,7 +432,7 @@
 			}
 
 		},
-		
+
 		// private method to create a slide pause call
 		_slideTimeout: function (pauseFor) {
 
@@ -441,7 +444,7 @@
 				if (!self.paused && timeoutId === self.slideTimeoutId) {
 					self._changeToNext();
 				}
-							
+
 			},pauseFor);
 
 		},
@@ -471,17 +474,17 @@
 				}
 
 			}
-			
+
 		},
 
 		// public method to resume the slider
 		resume: function () {
 
 			if (this.settings.autoplay) {
-				
+
 				this.paused = false;
 				this.slideStartTime = new Date();
-				
+
 				for (var i = 0;i < this.slides[this.currentSlideIndex].children.length;i++) {
 					this.slides[this.currentSlideIndex].children[i].$element.precss('animation-play-state','');
 				}
@@ -500,7 +503,7 @@
 				if (this.settings.onSliderResume) {
 					this.settings.onSliderResume.apply(this);
 				}
-				
+
 			}
 
 		},
@@ -550,7 +553,7 @@
 
 				clearTimeout(this.slideTimeoutId);
 
-				// return if the we are already on the called slide, 
+				// return if the we are already on the called slide,
 				// or the called slide is greater than the nuber of slides
 				if (slideIndex === this.currentSlideIndex || slideIndex > (this.slides.length - 1)) {
 					return;
@@ -608,6 +611,10 @@
 			var slideTransition = slideTransitions[self.slides[currentSlideIndex].transition] ? self.slides[currentSlideIndex].transition : 'slide';
 			var slideTransitionCallback = slideTransitions[slideTransition].apply(self,[prevSlideIndex,currentSlideIndex]);
 
+			var active_slide=self.slides[currentSlideIndex].$element[0];
+			var prev_slide=self.slides[prevSlideIndex].$element[0];
+			active_slide.classList.add('active_slide');
+
 			setTimeout(function () {
 
 				// if this function has a callback, call it
@@ -619,11 +626,12 @@
 
 				self._slideCleanup(prevSlideIndex,false);
 				self._slideElementCleanup(prevSlideIndex);
+				prev_slide.classList.remove('active_slide');
 
 				if (self.settings.autoplay) {
 					self._slideTimeout(self.slides[currentSlideIndex].totalSlideDuration);
 				}
-				
+
 				self._onSlideStart(currentSlideIndex);
 
 			}, self.slides[currentSlideIndex].duration);
@@ -639,7 +647,7 @@
 				// need to set them regardless of whether it is paused or not
 				this.slideStartTime = new Date();
 				this.slideTimeRemaining = this.slides[slideIndex].totalSlideDuration;
-					
+
 				if (this.settings.displayProgess && !this.paused) {
 					this.slides[slideIndex].$element.find('.pogoSlider-progressBar-duration').css('width','0').animate({'width':'100%'},this.slideTimeRemaining,'linear');
 				}
@@ -682,17 +690,17 @@
 			}
 
 			if (this.paused) {
-				
+
 				timeElapsed = this.slides[slideIndex].totalSlideDuration - this.slideTimeRemaining;
 
 				for (var i = 0;i < this.slides[slideIndex].children.length;i++) {
 					this.slides[slideIndex].children[i].$element.precss('animation-play-state','');
 				}
-			
+
 			} else {
-				
+
 				timeElapsed = this.slides[slideIndex].totalSlideDuration - (this.slideTimeRemaining - ((new Date()) - this.slideStartTime));
-			
+
 			}
 
 			// transition out, if slides elements have already transitioned in
@@ -808,7 +816,7 @@
 				.children()
 				.wrapAll('<div class="pogoSlider-slide-slice" style="' + 'width:' + sliceWidth + '%;height:' + sliceHeight + '%;top:0%;left:0%;' + '"/>')
 				.wrapAll('<div class="pogoSlider-slide-slice-inner" style="' + styleAttr + 'width:' + sliceInnerWidth + '%;height:' + sliceInnerHeight + '%;top:0%;left:0%;' + '"/>');
-		
+
 			$el.attr('style',function (i,style) {
 				return style.replace(/(?:background)[^;]+;/g, '');
 			});
@@ -824,7 +832,7 @@
 				if(this.settings.preserveTargetSize) {
 					sliceInnerBackgroundStyles = 'background-size:' + this.$element.width() + 'px ' + parseFloat(this.$element.css('padding-bottom')) + 'px;';
 				}
-				
+
 				var el = $el.find('.pogoSlider-slide-slice')
 					.last();
 				if(j != 0) {
@@ -873,7 +881,7 @@
 			return arr;
 
 		},
-		
+
 		// any slide transition effects can be added onto this object
 		slideTransitions:  {
 
@@ -887,7 +895,7 @@
 						'*opacity': '0',
 						'transition-duration': currentSlide.duration + 'ms'
 					});
-				
+
 				// transiton in the current slide
 				currentSlide.$element
 					.precss({
@@ -953,7 +961,7 @@
 					self.slides[prevSlideIndex].$element.removeClass('pogoSlider-animation-leftOut');
 					currentSlide.$element.attr('style',currentSlide.$element.data('original-styles')).css('opacity','1').removeClass('pogoSlider-animation-leftIn');
 				};
-				
+
 			},
 
 			slideRight: function (prevSlideIndex,currentSlideIndex) {
@@ -976,7 +984,7 @@
 					self.slides[prevSlideIndex].$element.removeClass('pogoSlider-animation-rightOut');
 					currentSlide.$element.attr('style',currentSlide.$element.data('original-styles')).css('opacity','1').removeClass('pogoSlider-animation-rightIn');
 				};
-				
+
 			},
 
 			slideUp: function (prevSlideIndex,currentSlideIndex) {
@@ -1180,7 +1188,7 @@
 				var $slices = self.slides[prevSlideIndex].$element.find('.pogoSlider-slide-slice');
 
 				$slices.precss('animation-duration',currentSlide.duration + 'ms');
-				
+
 				$slices.eq(0).addClass('pogoSlider-animation-upOut');
 				$slices.eq(1).addClass('pogoSlider-animation-downOut');
 
@@ -1200,7 +1208,7 @@
 				var $slices = self.slides[prevSlideIndex].$element.find('.pogoSlider-slide-slice');
 
 				$slices.precss('animation-duration',currentSlide.duration + 'ms');
-				
+
 				//var transitionDelay = currentSlide.duration / ($slices.length + 1);
 				//var transitionDuration = transitionDelay * 2;
 
@@ -1240,28 +1248,28 @@
 				self._createSlideSlices(prevSlideIndex,1,Math.round(self.$element.width() / 100));
 
 				var $slices = self.slides[prevSlideIndex].$element.find('.pogoSlider-slide-slice');
-				
+
 				var animationDelay = currentSlide.duration / ($slices.length + 1);
 				var animationDuration = animationDelay * 2;
 
 				$slices.precss('animation-duration',animationDuration + 'ms');
 
 				$slices.each(function (index) {
-					
+
 					if (direction === 'down') {
-						
+
 						$(this)
 							.addClass('pogoSlider-animation-downOut')
 							.precss('animation-delay',animationDelay * index + 'ms');
-					
+
 					} else {
-						
+
 						$(this)
 							.addClass('pogoSlider-animation-upOut')
 							.precss('animation-delay',animationDelay * index + 'ms');
-					
+
 					}
-				
+
 				});
 
 			},
@@ -1283,7 +1291,7 @@
 				// init current slide and prev slides position
 				self.slides[prevSlideIndex].$element.css('z-index',self.settings.baseZindex + 1);
 				currentSlide.$element.css({'opacity': 1,'z-index': self.settings.baseZindex});
-				
+
 				var randArr = self._generateARandomArray(numRows * numCols);
 				self._createSlideSlices(prevSlideIndex,numRows,numCols);
 				var $slices = self.slides[prevSlideIndex].$element.find('.pogoSlider-slide-slice');
@@ -1347,7 +1355,7 @@
 				$bottomLeft
 					.addClass('pogoSlider-animation-foldInRight')
 					.precss('animation-duration',currentSlide.duration + 'ms');
-				
+
 				$topRight
 					.addClass('pogoSlider-animation-foldOutRight')
 					.precss('animation-duration',currentSlide.duration + 'ms');
@@ -1392,7 +1400,7 @@
 
 				currentSlide.$element.append($bottomRight.detach());
 				prevSlide.$element.append($topRight.detach());
-				
+
 				$bottomRight
 					.addClass('pogoSlider-animation-foldInLeft')
 					.precss('animation-duration',currentSlide.duration + 'ms');
@@ -1405,7 +1413,7 @@
 
 					// restore original overflow
 					self.$element.css('overflow','');
-					
+
 					// need to manually cleanup the current slide
 					self._slideCleanup(currentSlideIndex,true);
 				};
@@ -1423,10 +1431,10 @@
 
 				// carry out transiton on previous slide and then clean up
 				this.slides[prevSlideIndex].$element.animate({opacity:0},currentSlide.duration);
-				
+
 				// transiton in the current slide
 				currentSlide.$element.animate({opacity:1},currentSlide.duration);
-			
+
 			},
 
 			slide: function (prevSlideIndex,currentSlideIndex) {
@@ -1472,7 +1480,7 @@
 				this.slides[prevSlideIndex].$element.animate({left:'-100%'},currentSlide.duration);
 
 				currentSlide.$element.css({left:'100%','opacity':1}).animate({left:0},currentSlide.duration);
-				
+
 			},
 
 			slideRight: function (prevSlideIndex,currentSlideIndex) {
@@ -1482,7 +1490,7 @@
 				this.slides[prevSlideIndex].$element.animate({left:'100%'},currentSlide.duration);
 
 				currentSlide.$element.css({left:'-100%','opacity':1}).animate({left:0},currentSlide.duration);
-				
+
 			},
 
 			slideUp: function (prevSlideIndex,currentSlideIndex) {
@@ -1591,7 +1599,7 @@
 				var $slices = self.slides[prevSlideIndex].$element.find('.pogoSlider-slide-slice');
 
 				$slices.eq(0).animate({'left': '-50%'}, currentSlide.duration);
-				
+
 				$slices.eq(1).animate({'left': '100%'}, currentSlide.duration);
 
 			},
@@ -1610,7 +1618,7 @@
 				var $slices = self.slides[prevSlideIndex].$element.find('.pogoSlider-slide-slice');
 
 				$slices.eq(0).animate({'top': '-50%'}, currentSlide.duration);
-				
+
 				$slices.eq(1).animate({'top': '100%'}, currentSlide.duration);
 
 			},
@@ -1628,7 +1636,7 @@
 				self._createSlideSlices(prevSlideIndex,1,Math.round(self.$element.width() / 100));
 
 				var $slices = self.slides[prevSlideIndex].$element.find('.pogoSlider-slide-slice');
-				
+
 				var transitionDelay = currentSlide.duration / ($slices.length + 1);
 				var transitionDuration = transitionDelay * 2;
 
@@ -1669,18 +1677,18 @@
 				self._createSlideSlices(prevSlideIndex,1,Math.round(self.$element.width() / 100));
 
 				var $slices = self.slides[prevSlideIndex].$element.find('.pogoSlider-slide-slice');
-				
+
 				var transitionDelay = currentSlide.duration / ($slices.length + 1);
 				var transitionDuration = transitionDelay * 2;
 
 				$slices.each(function (index) {
-					
+
 					if (direction === 'down') {
 						$(this).delay(transitionDelay * index).animate({'top': '100%'}, transitionDuration);
 					} else {
 						$(this).delay(transitionDelay * index).animate({'top': '-100%'}, transitionDuration);
 					}
-				
+
 				});
 
 			}
@@ -1688,9 +1696,9 @@
 		}
 
 	};
-	
+
 	$.fn[ pluginName ] = function (options) {
-		
+
 		this.each(function() {
 			if ( !$.data( this, 'plugin_' + pluginName ) ) {
 				$.data( this, 'plugin_' + pluginName, new Plugin( this, options ) );
@@ -1700,6 +1708,6 @@
 		// chain jQuery functions
 		return this;
 	};
-	
+
 
 })( jQuery, window, document );
